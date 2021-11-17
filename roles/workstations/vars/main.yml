@@ -1,0 +1,8 @@
+---
+
+workstation_apps:
+  - ffmpeg
+  - handbrake
+  - neofetch
+  - youtube-dl
+  - syncthing

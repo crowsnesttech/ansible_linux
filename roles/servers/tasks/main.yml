@@ -1,0 +1,8 @@
+---
+
+
+- name: Installing Server Packages
+  apt:
+    name: "{{ server_apps }}"
+    state: present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

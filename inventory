@@ -1,0 +1,23 @@
+[servers]
+ubs1804-syno
+ubs-pfgstack
+
+[workstations]
+popos-bench
+# popos-mbp13
+# popos-laptop             
+ubd-nvpt    
+
+[lab]
+ubs1-ansible
+ubs2-ansible
+ubs3-ansible
+
+# This group has all the servers
+# [multi:children]
+# servers             
+# workstations
+
+# Variables for all the servers
+# [multi:vars]
+# private_key_file = ~/.ssh/ansible

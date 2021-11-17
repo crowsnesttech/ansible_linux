@@ -1,0 +1,52 @@
+---
+
+- hosts: all
+  become: true
+  gather_facts: no
+  
+  pre_tasks:
+    - name: Wake-on-LAN to PopOS Bench
+      wakeonlan:
+        mac: '70:5a:0f:31:8c:81'
+        broadcast: 192.168.11.255
+      delegate_to: localhost
+      when: "'workstations' in group_names"
+      changed_when: false
+
+    - name: Wait for system to become reachable
+      wait_for_connection:
+        delay: 5
+        timeout: 15
+      when: "'workstations' in group_names"    
+    
+    - name: Gather facts for first time
+      setup:
+
+    # - name: Installing Updates
+    #   apt:
+    #     # upgrade: dist
+    #     update_cache: yes
+    #     cache_valid_time: 3600
+    #   when: ansible_distribution == 'Pop!_OS' or ansible_distribution == 'Ubuntu'
+
+- hosts: all
+  become: true
+  roles:
+    - base
+
+- hosts: servers
+  become: true
+  vars_files:
+  - default_vars.yml
+  roles:
+    - servers
+
+- hosts: workstations
+  become: true
+  roles:
+    - workstations
+
+- hosts: lab
+  become: true
+  roles:
+    - lab

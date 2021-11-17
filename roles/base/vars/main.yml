@@ -1,0 +1,15 @@
+---
+
+base_apps:
+  - cowsay
+  - iperf3
+  - zsh
+  - wakeonlan
+  - ipmitool
+  - nmap
+  - speedtest-cli
+  - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+  - htop
+  - python3-pip
