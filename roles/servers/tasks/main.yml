@@ -1,6 +1,5 @@
 ---
 
-
 - name: Installing Server Packages
   apt:
     name: "{{ server_apps }}"
