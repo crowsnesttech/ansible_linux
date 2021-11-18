@@ -1,10 +1,10 @@
 ---
 
-- name: Installing Server Packages
+- name: Installing Base Packages
   apt:
     name: "{{ base_apps }}"
     state: present
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  when: ansible_os_family == 'Debian'
 
 - name: Clone linux-dotfiles
   become_user: nick

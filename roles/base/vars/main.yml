@@ -1,9 +1,9 @@
 ---
 
 base_apps:
+  - zsh
   - cowsay
   - iperf3
-  - zsh
   - wakeonlan
   - ipmitool
   - nmap

@@ -1,27 +1,34 @@
 ---
 
-- name: Installing Server Packages
+- name: Installing Workstation Packages
   apt:
     name: "{{ workstation_apps }}"
     state: present
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  when: ansible_os_family == 'Debian'
 
 - name: Install apt-transport-https
-  ansible.builtin.apt:
+  apt:
     state: latest
+  when: ansible_os_family == 'Debian'
 
 - name: Add Apt signing key
-  ansible.builtin.apt_key:
+  apt_key:
     url: "https://dl.google.com/linux/linux_signing_key.pub"
     state: present
+  when: ansible_os_family == 'Debian'
 
 - name: Add repository into sources list
-  ansible.builtin.apt_repository:
+  apt_repository:
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
     state: present
     filename: google-chrome
+  when: ansible_os_family == 'Debian'
 
 - name: Install google-chrome-stable
-  ansible.builtin.apt:
+  apt:
     name: "google-chrome-stable"
     state: latest
+  when: ansible_os_family == 'Debian'
+
+- name: Copy and Execute the script 
+  script: files/nerd-fonts/install.sh

@@ -6,3 +6,5 @@ workstation_apps:
   - neofetch
   - youtube-dl
   - syncthing
+  - timeshift
+  - gnome-sushi
