@@ -1,5 +1,11 @@
 ---
 
+- name: Installing Updates
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  when: ansible_os_family == "Debian"
+
 - name: Installing Base Packages
   apt:
     name: "{{ base_apps }}"

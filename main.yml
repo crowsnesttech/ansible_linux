@@ -18,16 +18,6 @@
         delay: 5
         timeout: 15
       when: "'workstations' in group_names"    
-    
-    - name: Gather facts for first time
-      setup:
-
-    # - name: Installing Updates
-    #   apt:
-    #     # upgrade: dist
-    #     update_cache: yes
-    #     cache_valid_time: 3600
-    #   when: ansible_distribution == 'Pop!_OS' or ansible_distribution == 'Ubuntu'
 
 - hosts: all
   become: true

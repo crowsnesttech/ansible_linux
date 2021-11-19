@@ -30,5 +30,5 @@
     state: latest
   when: ansible_os_family == 'Debian'
 
-- name: Copy and Execute the script 
-  script: files/nerd-fonts/install.sh
+- name: Copy and Execute the script
+  command: bash /home/nick/git/dotfiles/linux-dotfiles/nerd-fonts/install.sh
