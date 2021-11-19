@@ -11,7 +11,7 @@
     state: latest
   when: ansible_os_family == 'Debian'
 
-- name: Add Apt signing key
+- name: Add apt signing key
   apt_key:
     url: "https://dl.google.com/linux/linux_signing_key.pub"
     state: present
