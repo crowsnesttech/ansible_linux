@@ -8,3 +8,7 @@ workstation_apps:
   - syncthing
   - timeshift
   - gnome-sushi
+  - remmina
+
+workstation_flatpaks:
+  - com.bitwarden.desktop
