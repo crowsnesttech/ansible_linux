@@ -9,6 +9,7 @@ workstation_apps:
   - timeshift
   - gnome-sushi
   - remmina
+  - mpv
 
-workstation_flatpaks:
-  - com.bitwarden.desktop
+# workstation_flatpaks:
+#   - com.bitwarden.desktop

@@ -4,8 +4,8 @@ ubs-pfgstack
 
 [workstations]
 popos-bench
-popos-mbp13
-# popos-laptop             
+# popos-mbp13
+popos-laptop             
 ubd-nvpt    
 
 [lab]
