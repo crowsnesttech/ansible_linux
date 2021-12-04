@@ -6,6 +6,10 @@
     cache_valid_time: 3600
   when: ansible_os_family == "Debian"
 
+- name: Upgrade the OS (apt-get dist-upgrade)
+  apt:
+    upgrade: dist
+
 - name: Installing Base Packages
   apt:
     name: "{{ base_apps }}"
@@ -28,6 +32,7 @@
     dest: /home/nick/git/dotfiles/linux-dotfiles/.oh-my-zsh
     clone: yes
     update: yes
+    force: yes
 
 - name: Symbolic link to oh-my-zsh
   file:
@@ -72,6 +77,7 @@
     dest: /home/nick/.oh-my-zsh/custom/plugins/zsh-autosuggestions
     clone: yes
     update: yes
+    force: yes
 
 - name: Clone zsh-syntax-highlighting
   become_user: nick
@@ -80,6 +86,7 @@
     dest: /home/nick/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     clone: yes
     update: yes
+    force: yes
 
 - name: Copy custom ZSH theme
   copy:

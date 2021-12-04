@@ -3,6 +3,7 @@ ubs1804-syno
 ubs-pfgstack
 
 [workstations]
+popos-benchmark
 popos-bench
 # popos-mbp13
 popos-laptop             
