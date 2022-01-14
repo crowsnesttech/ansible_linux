@@ -1,6 +1,7 @@
 [servers]
 ubs1804-syno
 ubs-pfgstack
+10.10.10.89
 
 [workstations]
 popos-benchmark
