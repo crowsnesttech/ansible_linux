@@ -11,9 +11,9 @@ popos-laptop
 ubd-nvpt    
 
 [lab]
-ubs1-ansible
-ubs2-ansible
-ubs3-ansible
+# ubs1-ansible
+# ubs2-ansible
+# ubs3-ansible
 
 # This group has all the servers
 # [multi:children]
