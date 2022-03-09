@@ -1,17 +1,17 @@
 [servers]
+localhost ansible_connection=local
 ubs1804-syno
 ubs-pfgstack
-10.10.10.89
+grafstack
 
 [workstations]
 popos-benchmark
 popos-bench
-# popos-mbp13
 popos-laptop             
 ubd-nvpt    
 
 [lab]
-# ubs1-ansible
+ubs1-ansible
 # ubs2-ansible
 # ubs3-ansible
 
