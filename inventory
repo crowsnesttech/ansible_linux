@@ -2,7 +2,7 @@
 localhost ansible_connection=local
 ubs1804-syno
 ubs-pfgstack
-grafstack
+
 
 [workstations]
 popos-benchmark
