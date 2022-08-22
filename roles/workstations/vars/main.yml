@@ -14,5 +14,5 @@ workstation_apps:
 # workstation_flatpaks:
 #   - com.bitwarden.desktop
 
-workstation_snaps:
-  - joplin-james-carroll
+# workstation_snaps:
+#   - joplin-james-carroll
