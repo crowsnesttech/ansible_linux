@@ -12,10 +12,10 @@
 #     state: present
 #     method: user
 
-- name: Installing snap packages
-  snap:
-    name: "{{ workstation_snaps }}"
-    state: present
+# - name: Installing snap packages
+#   snap:
+#     name: "{{ workstation_snaps }}"
+#     state: present
 
 - name: Install apt-transport-https
   apt:
