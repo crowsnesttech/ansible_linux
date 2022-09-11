@@ -17,6 +17,7 @@ base_apps:
 
 server_apps:
   - git
+  - docker-compose
 
 workstation_apps:
   - ffmpeg
