@@ -1,0 +1,15 @@
+---
+
+workstation_apps:
+  - ffmpeg
+  - handbrake
+  - neofetch
+  - youtube-dl
+  - syncthing
+  - timeshift
+  - gnome-sushi
+  - remmina
+  - mpv
+
+# workstation_flatpaks:
+#   - com.bitwarden.desktop
