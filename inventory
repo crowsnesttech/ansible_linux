@@ -1,9 +1,8 @@
 [servers]
 localhost ansible_connection=local
-#ubs1804-syno
-ubs-pfgstack
-ubs-nvpt-docker
-192.168.11.240
+# ubs1804-syno
+# ubs-pfgstack
+# ubs-nvpt-docker
 
 
 #[workstations]
@@ -11,7 +10,8 @@ ubs-nvpt-docker
 #popos-bench
 #popos-laptop
 #thktp-popos     
-#ubd-nvpt    
+#ubd-nvpt 
+ubd-pve   
 
 #[lab]
 #ubs1-ansible
