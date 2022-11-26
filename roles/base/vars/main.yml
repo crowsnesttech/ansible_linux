@@ -8,7 +8,6 @@ base_apps:
   - ipmitool
   - nmap
   - speedtest-cli
-  - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
   - htop
