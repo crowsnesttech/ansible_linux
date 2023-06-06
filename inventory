@@ -1,29 +1,8 @@
-# [servers]
-# localhost ansible_connection=local
-# ubs1804-syno
-# ubs-pfgstack
-# ubs-nvpt-docker
+[servers]
+192.168.11.6
 
+[workstations]
 
-#[workstations]
-#popos-benchmark
-#popos-bench
-#popos-laptop
-#thktp-popos     
-#ubd-nvpt 
-ubd-pve
-192.168.11.6   
-
-#[lab]
-#ubs1-ansible
-# ubs2-ansible
-# ubs3-ansible
-
-# This group has all the servers
-# [multi:children]
-# servers             
-# workstations
-
-# Variables for all the servers
-# [multi:vars]
-# private_key_file = ~/.ssh/ansible
+[lab]
+192.168.100.102
+192.168.100.103
