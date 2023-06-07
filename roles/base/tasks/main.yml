@@ -1,4 +1,10 @@
 ---
+- name: Add the user 'nick' with a specific uid and a primary group of 'admin'
+  ansible.builtin.user:
+    name: nick
+    comment: nick
+    uid: 1000
+    group: admin
 
 - name: Installing Updates
   apt:
