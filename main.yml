@@ -2,22 +2,22 @@
 
 - hosts: all
   become: true
-  gather_facts: no
+  gather_facts: yes
   
-  pre_tasks:
-    - name: Wake-on-LAN to PopOS Bench
-      wakeonlan:
-        mac: '70:5a:0f:31:8c:81'
-        broadcast: 192.168.11.255
-      delegate_to: localhost
-      when: "'workstations' in group_names"
-      changed_when: false
+  # pre_tasks:
+  #   - name: Wake-on-LAN to PopOS Bench
+  #     wakeonlan:
+  #       mac: '70:5a:0f:31:8c:81'
+  #       broadcast: 192.168.11.255
+  #     delegate_to: localhost
+  #     when: "'workstations' in group_names"
+  #     changed_when: false
 
-    - name: Wait for system to become reachable
-      wait_for_connection:
-        delay: 5
-        timeout: 15
-      when: "'workstations' in group_names"    
+  #   - name: Wait for system to become reachable
+  #     wait_for_connection:
+  #       delay: 5
+  #       timeout: 15
+  #     when: "'workstations' in group_names"    
 
 - hosts: all
   become: true

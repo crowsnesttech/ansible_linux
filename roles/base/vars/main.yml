@@ -1,6 +1,7 @@
 ---
 
 base_apps:
+  - git
   - zsh
   - cowsay
   - iperf3
