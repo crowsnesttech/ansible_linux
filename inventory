@@ -1,5 +1,4 @@
 [servers]
-<<<<<<< HEAD
 192.168.11.6 #ubsd-prod
 
 [workstations]
@@ -8,12 +7,3 @@ popos-laptop
 
 [lab]
 192.168.100.6  #ubsd-lab
-=======
-192.168.11.6
-
-[workstations]
-
-[lab]
-192.168.100.120
-192.168.100.121
->>>>>>> 1dd3758157b3fc069cdef9f2b5b37fe42eb1f53a
