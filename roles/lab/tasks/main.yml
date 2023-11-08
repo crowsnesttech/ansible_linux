@@ -1,9 +1,89 @@
 ---
 
-- name: install apache2 and php packages for Ubuntu
-  apt:
-    name:
-      - apache2
-      - libapache2-mod-php
-    state: latest
-  when: ansible_distribution == "Ubuntu"
+- name: Clone linux-dotfiles
+  become_user: labuser
+  git:
+    repo: https://github.com/crowsnesttech/linux-dotfiles.git
+    dest: /home/labuser/git/dotfiles/linux-dotfiles
+    clone: yes
+    update: yes
+    force: yes
+
+- name: Clone oh-my-zsh
+  become_user: labuser
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: /home/labuser/git/dotfiles/linux-dotfiles/.oh-my-zsh
+    clone: yes
+    update: yes
+    force: yes
+
+- name: Symbolic link to oh-my-zsh
+  file:
+    src: /home/labuser/git/dotfiles/linux-dotfiles/.oh-my-zsh
+    dest: /home/labuser/.oh-my-zsh
+    owner: labuser
+    group: labuser
+    state: link
+    force: yes
+
+- name: Symbolic link to vimrc
+  file:
+    src: /home/labuser/git/dotfiles/linux-dotfiles/.vimrc
+    dest: /home/labuser/.vimrc
+    owner: labuser
+    group: labuser
+    state: link
+    force: yes
+
+- name: Symbolic link to zshrc
+  file:
+    src: /home/labuser/git/dotfiles/linux-dotfiles/.zshrc
+    dest: /home/labuser/.zshrc
+    owner: labuser
+    group: labuser
+    state: link
+    force: yes
+
+- name: Symbolic link to tmux
+  file:
+    src: /home/labuser/git/dotfiles/linux-dotfiles/.tmux.conf
+    dest: /home/labuser/.tmux.com
+    owner: labuser
+    group: labuser
+    state: link
+    force: yes
+
+- name: Clone zsh-autosuggestions
+  become_user: labuser
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: /home/labuser/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    clone: yes
+    update: yes
+    force: yes
+
+- name: Clone zsh-syntax-highlighting
+  become_user: labuser
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: /home/labuser/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    clone: yes
+    update: yes
+    force: yes
+
+- name: Copy custom ZSH theme
+  copy:
+    src: /home/labuser/git/dotfiles/linux-dotfiles/agnostercstm.zsh-theme
+    dest: /home/labuser/git/dotfiles/linux-dotfiles/.oh-my-zsh/custom/themes/
+    owner: labuser
+    group: labuser
+    mode: '755'
+    remote_src: true
+
+- name: Change user Shell to ZSH 
+  become: yes
+  user:
+    name: labuser
+    shell: /bin/zsh
+  changed_when: false
