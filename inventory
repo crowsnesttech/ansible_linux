@@ -4,7 +4,7 @@
 
 [workstations]
 192.168.11.38 #popos-laptop
-# 192.168.11.197 #mx-prod
+192.168.11.189 #mx-prod
 
 [lab]
 192.168.20.43  #debdocker-lab3
