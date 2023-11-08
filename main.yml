@@ -5,28 +5,28 @@
   gather_facts: yes
   
   pre_tasks:
-    - name: Check connectivity
-      ping:
-        count: 3
-      register: ping_result
-      ignore_errors: true
+    # - name: Check connectivity
+    #   ping:
+    #     count: 3
+    #   register: ping_result
+    #   ignore_errors: true
 
-    - name: Send Wake-on-LAN
-      command: wakeonlan a4:4c:c8:1a:40:13
-      when: ping_result.failed
-    # - name: Wake-on-LAN to PopOS Garage
-    #   wakeonlan:
-    #     mac: 'a4:4c:c8:1a:40:13'
-    #     broadcast: 192.168.11.255
-    #   delegate_to: localhost
-    #   when: "'workstations' in group_names"
-    #   changed_when: false
+    # - name: Send Wake-on-LAN
+    #   command: wakeonlan a4:4c:c8:1a:40:13
+    #   when: ping_result.failed
+    - name: Wake-on-LAN to PopOS Garage
+      wakeonlan:
+        mac: 'a4:4c:c8:1a:40:13'
+        broadcast: 192.168.11.255
+      delegate_to: localhost
+      when: "'workstations' in group_names"
+      changed_when: false
 
-    # - name: Wait for system to become reachable
-    #   wait_for_connection:
-    #     delay: 5
-    #     timeout: 15
-    #   when: "'workstations' in group_names"    
+    - name: Wait for system to become reachable
+      wait_for_connection:
+        delay: 5
+        timeout: 15
+      when: "'workstations' in group_names"    
 
 - hosts: all
   become: true

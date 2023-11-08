@@ -1,9 +1,10 @@
 [servers]
 192.168.11.6 #ubsd-prod
-
+192.168.11.12 #ubs1804-syno
+192.168.20.13  #debdocker-lab3
 [workstations]
-popos-laptop
+192.168.11.38 #popos-laptop
 # 192.168.11.197 #mx-prod
 
 [lab]
-192.168.100.6  #ubsd-lab
+# 192.168.20.13  #ubsd-lab
